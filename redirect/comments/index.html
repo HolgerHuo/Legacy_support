@@ -47,7 +47,6 @@
         gtag('config', 'G-3C0DV7Y6F3');
     </script>
     <title>669电台 | 讨论区</title>
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <style>
         #veditor {
             background-image: url(https://cdn.jsdelivr.net/gh/drew233/cdn/20200409110727.webp);
@@ -304,20 +303,21 @@
                     visitor: true,
                     recordIP: true,
                     enableQQ: true,
-                    metaPlaceholder: {"nick":"昵称/QQ号","mail":"邮箱（完全保密）"},
+                    emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
+                    metaPlaceholder: { "nick": "昵称/QQ号", "mail": "邮箱（完全保密）" },
                     placeholder: "填写邮箱可以及时收到回复哦(●'◡'●) 填入QQ号可自动抓取昵称及头像~",
                     master: '10371d189acfbe530de499b8f46a7e29',   //博主邮箱md5
-                    tagMeta: ["669的小可爱~","669的建设者们","粉丝"],     //标识字段名
-                    friends:  ["86be1601bb52b3cf4e059c1dda0a9139","e1a1b3928cc3469e2d8a320ca15d434e","88763a3bf015b4c5d3b1cc522fe2f0d2"],
+                    tagMeta: ["669的小可爱~", "669的建设者们", "粉丝"],     //标识字段名
+                    friends: ["86be1601bb52b3cf4e059c1dda0a9139", "e1a1b3928cc3469e2d8a320ca15d434e", "88763a3bf015b4c5d3b1cc522fe2f0d2"],
                 })
             </script>
             <script>
-                if(window.location.hash){
-                    var checkExist = setInterval(function() {
-                       if ($(window.location.hash).length) {
-                          $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
-                          clearInterval(checkExist);
-                       }
+                if (window.location.hash) {
+                    var checkExist = setInterval(function () {
+                        if ($(window.location.hash).length) {
+                            $('html, body').animate({ scrollTop: $(window.location.hash).offset().top - 90 }, 1000);
+                            clearInterval(checkExist);
+                        }
                     }, 100);
                 }
             </script>
@@ -356,7 +356,7 @@
         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9251082595386983"
             data-ad-slot="9194847055" data-ad-format="auto" data-full-width-responsive="true"></ins>
         <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
+            (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
     </div>
 
