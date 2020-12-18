@@ -204,8 +204,9 @@
         }
         title_enc = getQueryString("title");
         title = decodeURI(title_enc)
+        html_title = "669电台 | " + title
         id = getQueryString("id");
-        document.title = title
+        document.title = html_title
         /** if (jump_url == base64encode(base64decode(jump_url))) {
             jump_url = base64decode(jump_url);
         }
@@ -242,7 +243,7 @@
                 <span id="title"></span>
             </h1>
             <p class="subtitle">
-                <span id="subtitle">讨论区</span>
+                <span id="subtitle">669电台讨论区</span>
             </p>
             <script>
                 document.getElementById("title").innerHTML = title;
