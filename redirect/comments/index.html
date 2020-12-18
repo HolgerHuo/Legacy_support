@@ -191,18 +191,20 @@
             f.decode.value = utf8to16(base64decode(f.output.value))
         };
 
-        function GetQueryString(name) {
-            var reg = new RegExp("(^|&)" + name + "=(.*)$");
-            var r = window.location.search.substr(1).match(reg);
-            if (r != null) {
-                return unescape(r[2]);
-            } else {
-                return window.location.pathname.replace("/go/", "");
+        function getQueryString(key) {
+            var str = location.search;
+            str = str.substring(1, str.length);
+            var arr = str.split("&");
+            var obj = new Object();
+            for (var i = 0; i < arr.length; i++) {
+                var tmp_arr = arr[i].split("=");
+                obj[decodeURIComponent(tmp_arr[0])] = decodeURIComponent(tmp_arr[1]);
             }
+            return obj[key];
         }
-        title_enc = GetQueryString("title");
+        title_enc = getQueryString("title");
         title = decodeURI(title_enc)
-        id = GetQueryString("id");
+        id = getQueryString("id");
         document.title = title
         /** if (jump_url == base64encode(base64decode(jump_url))) {
             jump_url = base64decode(jump_url);
@@ -228,8 +230,9 @@
             window.opener = null;
             window.close();
         }, 30000);**/
-    </script> <!--Base 64 解码及跳转 © https://go.holger.net.cn/ -->
-    
+    </script>
+    <!--Base 64 解码及跳转 © https://go.holger.net.cn/ -->
+
 </head>
 
 <body>
@@ -242,7 +245,7 @@
                 <span id="subtitle">讨论区</span>
             </p>
             <script>
-            document.getElementById("title").innerHTML = title;
+                document.getElementById("title").innerHTML = title;
             </script>
             <div id="vcomments"></div>
             <script src="https://cdn.jsdelivr.net/npm/valine@1.4.13/dist/Valine.min.js"></script>
@@ -251,7 +254,7 @@
                     el: '#vcomments',
                     appId: '1azp0Eup2fb2Q5uB9h50gtWO-MdYXbMMI',
                     appKey: '365AjJyDMs4d84v5Rmj6XH8v',
-                    path: "id",
+                    path: id,
                 })
             </script>
         </div>
