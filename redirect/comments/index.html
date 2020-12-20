@@ -24,6 +24,7 @@
     <link rel="shortcut icon" href="/avatar.png" />
     <link rel="icon" href="/avatar.png" />
     <script async src="theme_auto.js"></script>
+    <meta property="og:type" content="website" />
     <script>
         var _hmt = _hmt || [];
         (function() {
@@ -253,6 +254,7 @@
         des = getQueryString("des");
         des = decodeURI(des)
         ogImg = getQueryString("ogImg");
+        url_s = location.href;
         ogImg = decodeURI(ogImg)
         desc = document.querySelector("meta[name=description]");
         desc.setAttribute('content', des);
@@ -270,6 +272,16 @@
         for (var i = 0; i < metaList.length; i++) {
         if (metaList[i].getAttribute("property") == "og:image") {
             metaList[i].content = ogImg;
+        }
+        }
+        for (var i = 0; i < metaList.length; i++) {
+        if (metaList[i].getAttribute("property") == "og:title") {
+            metaList[i].content = title;
+        }
+        }
+        for (var i = 0; i < metaList.length; i++) {
+        if (metaList[i].getAttribute("property") == "og:url") {
+            metaList[i].content = url_s;
         }
         }
             /** if (jump_url == base64encode(base64decode(jump_url))) {
