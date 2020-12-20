@@ -250,6 +250,28 @@
         html_title = "669电台讨论区 | " + title;
         id = getQueryString("id");
         document.title = html_title
+        des = getQueryString("des");
+        des = decodeURI(des)
+        ogImg = getQueryString("ogImg");
+        ogImg = decodeURI(ogImg)
+        desc = document.querySelector("meta[name=description]");
+        desc.setAttribute('content', des);
+        var metaList = document.getElementsByTagName("meta");
+        for (var i = 0; i < metaList.length; i++) {
+        if (metaList[i].getAttribute("property") == "og:description") {
+            metaList[i].content = des;
+        }
+        }
+        for (var i = 0; i < metaList.length; i++) {
+        if (metaList[i].getAttribute("name") == "twitter:description") {
+            metaList[i].content = des;
+        }
+        }
+        for (var i = 0; i < metaList.length; i++) {
+        if (metaList[i].getAttribute("property") == "og:image") {
+            metaList[i].content = ogImg;
+        }
+        }
             /** if (jump_url == base64encode(base64decode(jump_url))) {
                 jump_url = base64decode(jump_url);
             }
