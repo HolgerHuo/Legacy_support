@@ -4,8 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
 
     <meta name="description" content="669电台 | 讨论区" />
     <meta name="author" content="拾吾,拾玖" />
@@ -20,17 +19,14 @@
     <meta name="keywords" content="留言板,Radio 669,669,评论,互动,669电台" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="day.css" />
-    <link id="dark-theme" rel="stylesheet" href="night.css" media="(prefers-color-scheme: dark)"
-        data-original-media="(prefers-color-scheme: dark)" />
-    <link id="daily-theme" rel="stylesheet" href="day.css"
-        media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
-        data-original-media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)" />
+    <link id="dark-theme" rel="stylesheet" href="night.css" media="(prefers-color-scheme: dark)" data-original-media="(prefers-color-scheme: dark)" />
+    <link id="daily-theme" rel="stylesheet" href="day.css" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" data-original-media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)" />
     <link rel="shortcut icon" href="/avatar.png" />
     <link rel="icon" href="/avatar.png" />
     <script async src="theme_auto.js"></script>
     <script>
         var _hmt = _hmt || [];
-        (function () {
+        (function() {
             var hm = document.createElement("script");
             hm.src = "https://hm.baidu.com/hm.js?198b9b655f0aae0d62046c4bc1a8263b";
             var s = document.getElementsByTagName("script")[0];
@@ -41,7 +37,10 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3C0DV7Y6F3"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
 
         gtag('config', 'G-3C0DV7Y6F3');
@@ -56,17 +55,17 @@
             background-color: rgba(255, 255, 255, 0);
             resize: vertical
         }
-
+        
         #veditor:focus {
             background-position-y: 200px;
             transition: all 0.2s ease-in-out 0s;
         }
-
+        
         img.vimg {
             transition: all 1s
-                /* 旋转时间为 1s */
+            /* 旋转时间为 1s */
         }
-
+        
         img.vimg:hover {
             transform: rotate(360deg);
             -webkit-transform: rotate(360deg);
@@ -74,7 +73,7 @@
             -o-transform: rotate(360deg);
             -ms-transform: rotate(360deg);
         }
-
+        
         #vcomments .vcards .vcard {
             padding: 15px 20px 0 20px;
             border-radius: 10px;
@@ -82,11 +81,11 @@
             box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
             transition: all .3s
         }
-
+        
         #vcomments .vcards .vcard:hover {
             box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
         }
-
+        
         #vcomments .vcards .vcard .vh .vcard {
             border: none;
             box-shadow: none;
@@ -245,36 +244,36 @@
                 obj[decodeURIComponent(tmp_arr[0])] = decodeURIComponent(tmp_arr[1]);
             }
             return obj[key];
-        }
+        };
         title_enc = getQueryString("title");
-        title = decodeURI(title_enc)
-        html_title = "669电台讨论区 | " + title
+        title = decodeURI(title_enc);
+        html_title = "669电台讨论区 | " + title;
         id = getQueryString("id");
         document.title = html_title
-        /** if (jump_url == base64encode(base64decode(jump_url))) {
-            jump_url = base64decode(jump_url);
-        }
-        if (jump_url == "blog") {
-            jump_url = "https://blog.holger.net.cn/";
-        }
-        if (jump_url == "sns") {
-            jump_url = "https://sns.holger.net.cn/";
-        }
-        if (jump_url == "pic") {
-            jump_url = "https://pic.holger.net.cn/";
-        }
-        var UrlReg = "^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)";
-        if (jump_url == null || jump_url.toString().length < 1 || !jump_url.match(UrlReg)) {
-            document.title = "Invalid Arguments, go to homepage...";
-            jump_url = "https://blog.holger.net.cn";
-        }
-        setTimeout(function link_jump() {
-            location.href = jump_url;
-        }, 5000);
-        setTimeout(function() {
-            window.opener = null;
-            window.close();
-        }, 30000);**/
+            /** if (jump_url == base64encode(base64decode(jump_url))) {
+                jump_url = base64decode(jump_url);
+            }
+            if (jump_url == "blog") {
+                jump_url = "https://blog.holger.net.cn/";
+            }
+            if (jump_url == "sns") {
+                jump_url = "https://sns.holger.net.cn/";
+            }
+            if (jump_url == "pic") {
+                jump_url = "https://pic.holger.net.cn/";
+            }
+            var UrlReg = "^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)";
+            if (jump_url == null || jump_url.toString().length < 1 || !jump_url.match(UrlReg)) {
+                document.title = "Invalid Arguments, go to homepage...";
+                jump_url = "https://blog.holger.net.cn";
+            }
+            setTimeout(function link_jump() {
+                location.href = jump_url;
+            }, 5000);
+            setTimeout(function() {
+                window.opener = null;
+                window.close();
+            }, 30000);**/
     </script>
     <!--Base 64 解码及跳转 © https://go.holger.net.cn/ -->
 
@@ -283,14 +282,29 @@
 <body>
     <div class="container">
         <div class="inner">
-            <h1>
-                <span id="title"></span>
-            </h1>
-            <p class="subtitle">
-                <span id="subtitle">669电台讨论区</span>
-            </p>
+            <div id="meta">
+                <h1>
+                    <span id="title"></span>
+                </h1>
+                <p class="subtitle">
+                    <span id="subtitle">669电台讨论区</span>
+                </p>
+            </div>
+            <div id="jump" style="display: none;">
+                <p class="subtitle" style="margin-top: 30px; font-size:large">
+                    <a href="#vcomments"><span id="subtitle">点我直达评论区</span></a>
+                </p>
+            </div>
+            <img id="dynimg" style="padding-right: 0px !important;padding-left: 0px !important;max-width: 400px !important;width: 100% !important;padding-bottom: 40px !important;">
             <script>
                 document.getElementById("title").innerHTML = title;
+                img_url = getQueryString("img");
+                if (img_url !== undefined) {
+                    img_u = decodeURI(img_url)
+                    document.getElementById("dynimg").src = img_u;
+                    document.getElementById("meta").style.display = "none";
+                    document.getElementById("jump").style.display = "block";
+                }
             </script>
             <div id="vcomments"></div>
             <script src="https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js"></script>
@@ -302,19 +316,23 @@
                     path: id,
                     recordIP: true,
                     enableQQ: true,
-                    emotionUrl: ['https://valinecdn.bili33.top/alu','https://valinecdn.bili33.top/bilibiliHotKey'],
-                    metaPlaceholder: { "nick": "昵称/QQ号", "mail": "邮箱（完全保密）" },
+                    metaPlaceholder: {
+                        "nick": "昵称/QQ号",
+                        "mail": "邮箱（完全保密）"
+                    },
                     placeholder: "填写邮箱可以及时收到回复哦(●'◡'●) 填入QQ号可自动抓取昵称及头像~",
-                    master: '10371d189acfbe530de499b8f46a7e29',   //博主邮箱md5
-                    tagMeta: ["669的小可爱~", "669的建设者们", "粉丝"],     //标识字段名
+                    master: '10371d189acfbe530de499b8f46a7e29', //博主邮箱md5
+                    tagMeta: ["669的小可爱~", "669的建设者们", "粉丝"], //标识字段名
                     friends: ["86be1601bb52b3cf4e059c1dda0a9139", "e1a1b3928cc3469e2d8a320ca15d434e", "88763a3bf015b4c5d3b1cc522fe2f0d2"],
                 })
             </script>
             <script>
                 if (window.location.hash) {
-                    var checkExist = setInterval(function () {
+                    var checkExist = setInterval(function() {
                         if ($(window.location.hash).length) {
-                            $('html, body').animate({ scrollTop: $(window.location.hash).offset().top - 90 }, 1000);
+                            $('html, body').animate({
+                                scrollTop: $(window.location.hash).offset().top - 90
+                            }, 1000);
                             clearInterval(checkExist);
                         }
                     }, 100);
@@ -351,8 +369,7 @@
     <div class="ggad">
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <!-- Radio 669 Article Discussion -->
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9251082595386983"
-            data-ad-slot="9194847055" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9251082595386983" data-ad-slot="9194847055" data-ad-format="auto" data-full-width-responsive="true"></ins>
         <script>
             (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
