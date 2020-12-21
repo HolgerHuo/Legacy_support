@@ -289,29 +289,29 @@
             }
         }
             /** if (jump_url == base64encode(base64decode(jump_url))) {
-            jump_url = base64decode(jump_url);
-        }
-        if (jump_url == "blog") {
-            jump_url = "https://blog.holger.net.cn/";
-        }
-        if (jump_url == "sns") {
-            jump_url = "https://sns.holger.net.cn/";
-        }
-        if (jump_url == "pic") {
-            jump_url = "https://pic.holger.net.cn/";
-        }
-        var UrlReg = "^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)";
-        if (jump_url == null || jump_url.toString().length < 1 || !jump_url.match(UrlReg)) {
-            document.title = "Invalid Arguments, go to homepage...";
-            jump_url = "https://blog.holger.net.cn";
-        }
-        setTimeout(function link_jump() {
-            location.href = jump_url;
-        }, 5000);
-        setTimeout(function() {
-            window.opener = null;
-            window.close();
-        }, 30000);**/
+        jump_url = base64decode(jump_url);
+    }
+    if (jump_url == "blog") {
+        jump_url = "https://blog.holger.net.cn/";
+    }
+    if (jump_url == "sns") {
+        jump_url = "https://sns.holger.net.cn/";
+    }
+    if (jump_url == "pic") {
+        jump_url = "https://pic.holger.net.cn/";
+    }
+    var UrlReg = "^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)";
+    if (jump_url == null || jump_url.toString().length < 1 || !jump_url.match(UrlReg)) {
+        document.title = "Invalid Arguments, go to homepage...";
+        jump_url = "https://blog.holger.net.cn";
+    }
+    setTimeout(function link_jump() {
+        location.href = jump_url;
+    }, 5000);
+    setTimeout(function() {
+        window.opener = null;
+        window.close();
+    }, 30000);**/
     </script>
     <!--Base 64 解码及跳转 © https://go.holger.net.cn/ -->
 
@@ -346,7 +346,7 @@
                 }
             </script>
             <img src="https://cdn.jsdelivr.net/gh/holgerhuo/cdn/picgo/20201221220000.jpg"
-                style="padding-right: 0px !important;padding-left: 0px !important;max-width: 200px !important;width: 50% !important;padding-bottom: 0px !important;">
+                style="padding-right: 0px !important;padding-left: 0px !important;max-width: 200px !important;width: 50% !important;padding-bottom: 5px !important;padding-top:10px">
             <br><span>长按扫描二维码关注Radio 669~</span>
             <div id="vcomments" style="padding-top: 40px;"></div>
             <script src="https://cdn.jsdelivr.net/gh/holgerhuo/Valine@1.4.17/dist/Valine.min.js"></script>
