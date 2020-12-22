@@ -269,7 +269,14 @@
     </script>
     <!--Base 64 解码及跳转 © https://go.holger.net.cn/ -->
 </head>
+<!--
+    Query String Template: 
 
+    ?title=test%26title&des=daa%26&img=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fholgerhuo%2Fcdn%2Fpicgo%2F20201222211227.png&imgDark=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fholgerhuo%2Fcdn%2Fpicgo%2F20201222211315.jpg&ogImg=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fholgerhuo%2Fcdn%2Fpicgo%2F20201222211315.jpg&con=%3Cp%2520class%253D%22subtitle%22%2520style%253D%22margin-top%253A%252030px%253B%2520font-size%253Alarge%22%3E%3Ca%2520href%253D%22%2523vcomments%22%3E%3Cspan%2520id%253D%22subtitle%22%3E%E7%82%B9%E6%88%91%E7%9B%B4%E8%BE%BE%E8%AF%84%E8%AE%BA%E5%8C%BA%3C%252Fspan%3E%3C%252Fa%3E%3C%252Fp%3E&id=201221&keyw=key1%2Ckey2%2Ckey3
+
+    © https://github.com/holgerhuo/
+
+    -->
 <body>
     <div class="container">
         <div class="inner">
@@ -338,7 +345,7 @@
                 }
                 dyncon = getQueryString("con");
                 if (dyncon !== undefined) {
-                    con = decodeURI(dyncon)
+                    con = decodeURIComponent(dyncon);
                     document.getElementById("dyncon").innerHTML = con;
                     document.getElementById("meta").style.display = "none";
                     document.getElementById("jump").style.display = "block";
