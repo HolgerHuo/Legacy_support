@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-
     <meta name="description" content="669电台 | 讨论区" />
     <meta name="author" content="拾吾,拾玖" />
+    <meta name="keywords" content="留言板,Radio 669,669,评论,互动,669电台" />
+    <meta property="og:type" content="website" />
     <meta property="og:url" content="https://holger.net.cn/redirect/comments/" />
     <meta property="og:title" content="669电台 | 讨论区" />
     <meta property="og:description" content="669电台 | 讨论区" />
     <meta property="og:image" content="/avatar.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="669电台 | 讨论区" />
-    <meta name="apple-mobile-web-app-capable" content="no" />
     <meta name="twitter:description" content="669电台 | 讨论区" />
-    <meta name="keywords" content="留言板,Radio 669,669,评论,互动,669电台" />
+    <meta name="apple-mobile-web-app-capable" content="no" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="day.css" />
     <link id="dark-theme" rel="stylesheet" href="night.css" media="(prefers-color-scheme: dark)"
@@ -28,7 +28,6 @@
     <link rel="shortcut icon" href="/avatar.png" />
     <link rel="icon" href="/avatar.png" />
     <script async src="theme_auto.js"></script>
-    <meta property="og:type" content="website" />
     <script>
         var _hmt = _hmt || [];
         (function () {
@@ -51,51 +50,6 @@
         gtag('config', 'G-3C0DV7Y6F3');
     </script>
     <title>669电台 | 讨论区</title>
-    <style>
-        #veditor {
-            /**background-image: url(https://cdn.jsdelivr.net/gh/drew233/cdn/20200409110727.webp);**/
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: right;
-            background-color: rgba(255, 255, 255, 0);
-            resize: vertical
-        }
-
-        #veditor:focus {
-            background-position-y: 200px;
-            transition: all 0.2s ease-in-out 0s;
-        }
-
-        img.vimg {
-            transition: all 1s
-                /* 旋转时间为 1s */
-        }
-
-        img.vimg:hover {
-            transform: rotate(360deg);
-            -webkit-transform: rotate(360deg);
-            -moz-transform: rotate(360deg);
-            -o-transform: rotate(360deg);
-            -ms-transform: rotate(360deg);
-        }
-
-        #vcomments .vcards .vcard {
-            padding: 15px 20px 0 20px;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
-            transition: all .3s
-        }
-
-        #vcomments .vcards .vcard:hover {
-            box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
-        }
-
-        #vcomments .vcards .vcard .vh .vcard {
-            border: none;
-            box-shadow: none;
-        }
-    </style>
     <script async>
         var base64EncodeChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
         var base64DecodeChars = new Array(-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 62, -1, -1, -1, 63, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, -1, -1, -1, -1, -1, -1, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, -1, -1, -1, -1, -1, -1, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, -1, -1, -1, -1, -1);
@@ -250,71 +204,70 @@
             }
             return obj[key];
         };
-        title_enc = getQueryString("title");
-        title = decodeURI(title_enc);
-        html_title = "669电台讨论区 | " + title;
-        id = getQueryString("id");
-        document.title = html_title
-        des = getQueryString("des");
-        des = decodeURI(des)
-        ogImg = getQueryString("ogImg");
-        url_s = location.href;
-        ogImg = decodeURI(ogImg)
-        desc = document.querySelector("meta[name=description]");
-        desc.setAttribute('content', des);
         var metaList = document.getElementsByTagName("meta");
-        for (var i = 0; i < metaList.length; i++) {
-            if (metaList[i].getAttribute("property") == "og:description") {
-                metaList[i].content = des;
+
+        des = getQueryString("des");
+        if (des !== undefined) {
+            des = decodeURIComponent(des);
+            desc = document.querySelector("meta[name=description]");
+            desc.setAttribute('content', des);
+            for (var i = 0; i < metaList.length; i++) {
+                if (metaList[i].getAttribute("property") == "og:description") {
+                    metaList[i].content = des;
+                }
+            };
+            for (var i = 0; i < metaList.length; i++) {
+                if (metaList[i].getAttribute("name") == "twitter:description") {
+                    metaList[i].content = des;
+                }
             }
         }
-        for (var i = 0; i < metaList.length; i++) {
-            if (metaList[i].getAttribute("name") == "twitter:description") {
-                metaList[i].content = des;
-            }
+        keyw = getQueryString("keyw");
+        if (keyw !== undefined) {
+            keyw = decodeURIComponent(keyw);
+            keywo = document.querySelector("meta[name=keywords]");
+            keywo.setAttribute('content', keyw)
         }
-        for (var i = 0; i < metaList.length; i++) {
-            if (metaList[i].getAttribute("property") == "og:image") {
-                metaList[i].content = ogImg;
-            }
-        }
-        for (var i = 0; i < metaList.length; i++) {
-            if (metaList[i].getAttribute("property") == "og:title") {
-                metaList[i].content = title;
+        ogImg = getQueryString("ogImg");
+        if (ogImg !== undefined) {
+            ogImg = decodeURI(ogImg);
+            for (var i = 0; i < metaList.length; i++) {
+                if (metaList[i].getAttribute("property") == "og:image") {
+                    metaList[i].content = ogImg
+                }
             }
         }
         for (var i = 0; i < metaList.length; i++) {
             if (metaList[i].getAttribute("property") == "og:url") {
-                metaList[i].content = url_s;
+                metaList[i].content = location.href;
             }
         }
-            /** if (jump_url == base64encode(base64decode(jump_url))) {
+        /** if (jump_url == base64encode(base64decode(jump_url))) {
         jump_url = base64decode(jump_url);
-    }
-    if (jump_url == "blog") {
+        }
+        if (jump_url == "blog") {
         jump_url = "https://blog.holger.net.cn/";
-    }
-    if (jump_url == "sns") {
+        }
+        if (jump_url == "sns") {
         jump_url = "https://sns.holger.net.cn/";
-    }
-    if (jump_url == "pic") {
+        }
+        if (jump_url == "pic") {
         jump_url = "https://pic.holger.net.cn/";
-    }
-    var UrlReg = "^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)";
-    if (jump_url == null || jump_url.toString().length < 1 || !jump_url.match(UrlReg)) {
+        }
+        var UrlReg = "^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)";
+        if (jump_url == null || jump_url.toString().length < 1 || !jump_url.match(UrlReg)) {
         document.title = "Invalid Arguments, go to homepage...";
         jump_url = "https://blog.holger.net.cn";
-    }
-    setTimeout(function link_jump() {
+        }
+        setTimeout(function link_jump() {
         location.href = jump_url;
-    }, 5000);
-    setTimeout(function() {
+        }, 5000);
+        setTimeout(function() {
         window.opener = null;
         window.close();
-    }, 30000);**/
+        }, 30000);**/
     </script>
     <!--Base 64 解码及跳转 © https://go.holger.net.cn/ -->
-
 </head>
 
 <body>
@@ -322,10 +275,10 @@
         <div class="inner">
             <div id="meta">
                 <h1>
-                    <span id="title"></span>
+                    <span id="title">669电台 | 讨论区</span>
                 </h1>
                 <p class="subtitle">
-                    <span id="subtitle">669电台讨论区</span>
+                    <span id="subtitle">669电台 | 讨论区</span>
                 </p>
             </div>
             <div id="jump" style="display: none;">
@@ -333,14 +286,60 @@
                     <a href="#vcomments"><span id="subtitle">点我直达评论区</span></a>
                 </p>
             </div>
+            <div id="dyncon"></div>
             <img id="dynimg"
                 style="padding-right: 0px !important;padding-left: 0px !important;max-width: 400px !important;width: 100% !important;padding-bottom: 0px !important;">
             <script>
-                document.getElementById("title").innerHTML = title;
+                title_enc = getQueryString("title");
+                if (title_enc !== undefined) {
+                    title = decodeURIComponent(title_enc);
+                    document.title = title;
+                    document.getElementById("title").innerHTML = title;
+                    for (var i = 0; i < metaList.length; i++) {
+                        if (metaList[i].getAttribute("property") == "og:title") {
+                            metaList[i].content = title;
+                        }
+                    };
+                    for (var i = 0; i < metaList.length; i++) {
+                        if (metaList[i].getAttribute("name") == "twitter:title") {
+                            metaList[i].content = title;
+                        }
+                    }
+                }
                 img_url = getQueryString("img");
                 if (img_url !== undefined) {
                     img_u = decodeURI(img_url)
                     document.getElementById("dynimg").src = img_u;
+                    document.getElementById("meta").style.display = "none";
+                    document.getElementById("jump").style.display = "block";
+                    imgd_url = getQueryString("imgDark");
+                    if (imgd_url !== undefined) {
+                        imgd_u = decodeURI(imgd_url)
+                        let prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                        if (prefersDarkMode) {
+                            document.getElementById("dynimg").src = imgd_u;
+                        }
+                        let media = window.matchMedia('(prefers-color-scheme: dark)');
+                        let callback = (e) => {
+                            let prefersDarkMode = e.matches;
+                            if (prefersDarkMode) {
+                                document.getElementById("dynimg").src = imgd_u;
+                            }
+                            else {
+                                document.getElementById("dynimg").src = img_u;
+                            }
+                        };
+                        if (typeof media.addEventListener === 'function') {
+                            media.addEventListener('change', callback);
+                        } else if (typeof media.addListener === 'function') {
+                            media.addListener(callback);
+                        }
+                    }
+                }
+                dyncon = getQueryString("con");
+                if (dyncon !== undefined) {
+                    con = decodeURI(dyncon)
+                    document.getElementById("dyncon").innerHTML = con;
                     document.getElementById("meta").style.display = "none";
                     document.getElementById("jump").style.display = "block";
                 }
@@ -351,6 +350,7 @@
             <div id="vcomments" style="padding-top: 40px;"></div>
             <script src="https://cdn.jsdelivr.net/gh/holgerhuo/Valine@1.4.17/dist/Valine.min.js"></script>
             <script>
+                id = getQueryString("id");
                 new Valine({
                     el: '#vcomments',
                     appId: '1azp0Eup2fb2Q5uB9h50gtWO-MdYXbMMI',
@@ -382,7 +382,7 @@
                 }
             </script>
         </div>
-        <!--<div class="footer">
+        <div>
             <p style="
           text-align: center;
           max-width: 400px;
@@ -398,17 +398,17 @@
           width: 100%;
           font-size: small;
         ">
-                ©️ 2020 <a href="https://blog.holger.net.cn" target="_blank">Holger</a> |
+                ©️ 2020 <a href="#" target="_blank">拾吾与拾玖</a>
+                <!-- |
                 <a href="/chat/" target="_blank" class="lang" data-locale="cm">留言区 QwQ</a> |
                 <a href="/changelogs/" target="_blank" class="lang" data-locale="changelog">更新日志</a>
 
-            </p>
-            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-            -->
-    </div>
-
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css" />
+            </p>-->
+                <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        </div>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet" />
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css" />
     </div>
     <div class="ggad">
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
